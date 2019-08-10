@@ -1,42 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Dog Prototype</title>
-        <meta charset="utf-8">
-        <script>
-        function Dog(name, breed, weight){
+
+<head>
+    <title>Dog Prototype</title>
+    <meta charset="utf-8">
+    <script>
+        function Dog(name, breed, weight) {
             this.name = name;
             this.breed = breed;
             this.weight = weight;
         }
 
-        Dog.prototype.species="Canine";
 
-        Dog.prototype.bark = function(){
-            if(this.weight>25){
+
+        Dog.prototype.species = "Canine";
+
+        Dog.prototype.bark = function () {
+            if (this.weight > 25) {
                 console.log(this.name + " says Woof!");
-            }else {
+            } else {
                 console.log(this.name + " says Yip!");
             }
         };
 
-        Dog.prototype.run = function(){
+        Dog.prototype.run = function () {
             console.log("Run!");
         }
 
-        Dog.prototype.wag = function(){
+        Dog.prototype.wag = function () {
             console.log("Wag");
         };
 
         Dog.prototype.sitting = false;
 
-        Dog.prototype.sit = function(){
-            if(this.sitting){
+        Dog.prototype.sit = function () {
+            if (this.sitting) {
                 console.log(this.name + " is already sitting");
-            }else{
+            } else {
                 this.sitting = true;
                 console.log(this.name + " is now sitting");
             }
+        };
+
+        function ShowDog(name, breed, weight, handler) {
+            this.name = name;
+            this.breed = breed;
+            this.weight = weight;
+            this.handler = handler;
+        }
+
+        ShowDog.prototype = new Dog();
+
+        ShowDog.prototype.league = "Webville";
+
+        ShowDog.prototype.stack = function () {
+            console.log("Stack");
+        };
+
+        ShowDog.prototype.bait = function () {
+            console.log("Bait");
+        };
+
+        ShowDog.prototype.gait = function (kind) {
+            console.log(kind + "ing");
+        }
+
+        ShowDog.prototype.groom = function () {
+            console.log("Groom");
         };
 
         var fido = new Dog("Fido", "Mixed", 38);
@@ -44,14 +74,16 @@
         var spot = new Dog("Spot", "Chihuahua", 10);
         var barnaby = new Dog("Barnaby", "Basset Hound", 55);
 
-        spot.bark = function(){
+        var scotty = new ShowDog("Scotty", "Scottish Terrier", 15, "Cookie");
+
+        spot.bark = function () {
             console.log(this.name + " says WOOF!");
         }
 
         fido.bark();
         fido.run();
         fido.wag();
-    
+
         fluffy.bark();
         fluffy.run();
         fluffy.wag();
@@ -64,6 +96,13 @@
         barnaby.sit();
         spot.sit();
         spot.sit();
-        </script>
-    </head>
+
+
+        scotty.stack();
+        scotty.bark();
+        console.log(scotty.league);
+        console.log(scotty.species);
+    </script>
+</head>
+
 </html>
