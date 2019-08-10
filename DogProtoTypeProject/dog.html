@@ -43,13 +43,12 @@
         };
 
         function ShowDog(name, breed, weight, handler) {
-            this.name = name;
-            this.breed = breed;
-            this.weight = weight;
+            Dog.call(this,name,breed, weight);
             this.handler = handler;
         }
 
         ShowDog.prototype = new Dog();
+        ShowDog.prototype.constructor = ShowDog;
 
         ShowDog.prototype.league = "Webville";
 
@@ -75,33 +74,17 @@
         var barnaby = new Dog("Barnaby", "Basset Hound", 55);
 
         var scotty = new ShowDog("Scotty", "Scottish Terrier", 15, "Cookie");
+        var beatrice = new ShowDog("Beatrice", "Pomeranian", 5, "Hamilton");
 
-        spot.bark = function () {
-            console.log(this.name + " says WOOF!");
-        }
+        
 
         fido.bark();
-        fido.run();
-        fido.wag();
-
         fluffy.bark();
-        fluffy.run();
-        fluffy.wag();
-
         spot.bark();
-        spot.run();
-        spot.wag();
-
-        barnaby.sit();
-        barnaby.sit();
-        spot.sit();
-        spot.sit();
-
-
-        scotty.stack();
         scotty.bark();
-        console.log(scotty.league);
-        console.log(scotty.species);
+        beatrice.bark();
+        scotty.gait("Walk");
+        beatrice.groom();
     </script>
 </head>
 
