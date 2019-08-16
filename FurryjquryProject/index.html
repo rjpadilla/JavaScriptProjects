@@ -5,8 +5,19 @@
         <link rel="stylesheet" type="text/css" href="my_style.css">
     </head>
     <body>
-        <div id ="showfriend">
-            <a href="#">Our Furry Friends Need Your Help <img src="furry_friend.jpg"> </a>
+        <div id ="clickMe">Show Me the Furry Friend of the Day</div>
+        <div id="picframe">
+          <img src="furry_friend.jpg"> 
         </div>
+            
+        <script src="../scripts/jQuery-3.4.1.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("#clickMe").click(function(){
+                $("img").fadeIn(1000);
+                $("#picframe").slideToggle("slow");
+            });
+        });
+        </script>
     </body>
 </html>
