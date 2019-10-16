@@ -32,6 +32,15 @@ $(document).ready(function(){
         });
     }
 
+    $(".guess_box").hover(
+        function(){
+            $(this).addClass("my_hover");
+        },
+        function(){
+            $(this).removeClass("my_hover");
+        }
+    );
+
 
     // $(".guess_box").click(checkForCode);
     // function checkForCode(){
