@@ -1,8 +1,11 @@
+
 $(document).ready(function(){
-    var v = f;
+    var v = false;
     $("button#vegOn").click(function(){
-        if(v== false){
+        
+        if(v == false){
             v = true;
+            $("li.fish").detach();
         }
     }); //end button
     $("button#restoreMe").click(function(){
