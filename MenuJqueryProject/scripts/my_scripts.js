@@ -14,6 +14,7 @@ $(document).ready(function(){
     $("button#restoreMe").click(function(){
         if(v == true){
             v = false;
+            $(".menu_entrees li").first().before($f);
         }
     }); //end button
 }); //end document ready
