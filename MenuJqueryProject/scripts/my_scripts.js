@@ -5,7 +5,7 @@ $(document).ready(function(){
         
         if(v == false){
             v = true;
-            $("li.fish").detach();
+            $f = $(".fish").parent().parent().detach();
         }
     }); //end button
     $("button#restoreMe").click(function(){
