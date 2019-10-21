@@ -15,6 +15,7 @@ $(document).ready(function(){
         if(v == true){
             v = false;
             $(".menu_entrees li").first().before($f);
+            $(".portobello").replaceWith("<li class = 'hamburger'>Hamburger</li>");
         }
     }); //end button
 }); //end document ready
