@@ -7,6 +7,8 @@ $(document).ready(function(){
             v = true;
             $f = $(".fish").parent().parent().detach();
             $(".hamburger").replaceWith("<li class='portobello'><em>Portobello Mushroom</em></li>");
+            $(".meat").after("<li class='tofu'><em>Tofu</em></li>");
+            $m = $(".meat").detach();
         }
     }); //end button
     $("button#restoreMe").click(function(){
