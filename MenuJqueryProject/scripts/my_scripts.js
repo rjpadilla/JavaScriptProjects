@@ -13,9 +13,14 @@ $(document).ready(function(){
     }); //end button
     $("button#restoreMe").click(function(){
         if(v == true){
-            v = false;
+            
             $(".menu_entrees li").first().before($f);
             $(".portobello").replaceWith("<li class = 'hamburger'>Hamburger</li>");
+            $(".tofu").each(function(i){
+                $(this).after($m[i]);
+            });
+            $(".tofu").remove();
+            v = false;
         }
     }); //end button
 }); //end document ready
