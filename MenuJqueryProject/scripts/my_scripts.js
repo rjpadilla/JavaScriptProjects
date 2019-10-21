@@ -6,6 +6,7 @@ $(document).ready(function(){
         if(v == false){
             v = true;
             $f = $(".fish").parent().parent().detach();
+            $(".hamburger").replaceWith("<li class='portobello'><em>Portobello Mushroom</em></li>");
         }
     }); //end button
     $("button#restoreMe").click(function(){
