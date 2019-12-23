@@ -47,6 +47,34 @@ $(document).ready(function () {
     
 });
 
+goLightning();
+window.onblur = stopLightning;
+window.onfocus = goLightning;
+var int1, int2, int3;
+function goLightning(){
+    int1 = setInterval(function(){
+        lightning_one();
+    },
+    4000
+    );
+    int2 = setInterval(function(){
+        lightning_two();
+    },
+    5000
+    );
+    int3 = setInterval(function(){
+        lightning_three();
+    },
+    7000
+    );
+}
+
+function stopLightning(){
+    window.clearInterval(int1);
+    window.clearInterval(int2);
+    window.clearInterval(int3);
+}
+
 function lightning_one(t){
     $("#container #lightning1").fadeIn(250).fadeOut(250);
     setTimeout("lightning_one()",t);
